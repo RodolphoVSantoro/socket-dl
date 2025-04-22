@@ -17,7 +17,7 @@ async fn main() {
     let default_port = "9999".to_string();
     let port = env_map.get("PORT").unwrap_or(&default_port);
 
-    let addr: std::net::SocketAddr = format!("127.0.0.1:{port}").parse().unwrap();
+    let addr: std::net::SocketAddr = format!("0.0.0.0:{port}").parse().unwrap();
     let socket = TcpSocket::new_v4().expect("Failed to create socket");
     socket
         .set_reuseaddr(true)
